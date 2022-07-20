@@ -1,0 +1,10 @@
+mixin header(currentPage)
+  header.header
+    .wrapper
+      .header__wrapper
+        nav
+          ul
+            li.menu__item
+              a.menu__link(href='/', class=currentPage === 'home' ? 'active' : '') Главная
+            li.menu__item
+              a.menu__link(href='/404/', class=currentPage === '404' ? 'active' : '') 404

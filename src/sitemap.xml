@@ -2,12 +2,22 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://localhost:8080/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>monthly</changefreq>
   </url>
   <url>
-    <loc>http://localhost:8080/404/</loc>
-    <lastmod>2022-07-19</lastmod>
+    <loc>http://localhost:8080/catalog/</loc>
+    <lastmod>2022-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://localhost:8080/offers/</loc>
+    <lastmod>2022-08-13</lastmod>
+    <changefreq>monthly</changefreq>
+  </url>
+  <url>
+    <loc>http://localhost:8080/services/</loc>
+    <lastmod>2022-08-13</lastmod>
     <changefreq>monthly</changefreq>
   </url>
 </urlset>

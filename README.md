@@ -1,1 +1,1 @@
-# Landing for "Coffee" company
+# Corporate website for "Samba" company

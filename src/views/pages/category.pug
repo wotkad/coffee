@@ -1,0 +1,21 @@
+extends ../layouts/master.pug
+
+block title
+  title Coffee | Категория
+
+block basicSeo
+  meta(name='description' content='Category page')
+  meta(name='keywords', content='category, page')
+
+block manifestBrowserconfigFiles
+  link(href='../manifest.json', rel='manifest')
+  meta(name='msapplication-config' content='../browserconfig.xml')
+
+block content
+
+  +header('category') 
+
+  include ../components/sidebar.pug
+  .barba(data-barba="wrapper")
+    main(data-barba="container" data-barba-namespace="category")
+

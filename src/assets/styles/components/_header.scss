@@ -1,3 +1,30 @@
 .header {
-  
+  &__wrapper {
+    @apply flex items-center justify-between py-8 pl-14
+  }
+  &__contacts {
+    @apply flex
+  }
+  &__contact {
+    &:last-child {
+      @apply mr-0
+    }
+    @apply text-xs text-gray-400 mr-12 inline-block duration-300 transition-colors hover:text-brown-400
+  }
+  &__menu {
+    .callback {
+      @apply ml-12 text-white bg-brown-400 rounded lg:py-3 lg:px-10 xl:py-4 xl:px-16 cursor-pointer duration-300 transition-colors will-change-[background-color] hover:bg-black
+    }
+    @apply flex items-center
+  }
+  &__link {
+    &:first-child {
+      @apply ml-0
+    }
+    &.active {
+      @apply text-brown-400 border-b-brown-400
+    }
+    @apply text-xs ml-[74px] inline-block uppercase border-b-4 border-transparent duration-300 font-bold transition-colors will-change-[color,border-color] hover:text-brown-400 hover:border-b-brown-400
+  }
+  @apply lg:px-[100px] xl:px-[150px]
 }

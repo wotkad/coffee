@@ -5,16 +5,21 @@ body {
   text-rendering: optimizeSpeed;
 }
 
+body {
+  font-family: $font;
+  @apply text-black text-base;
+}
+
 .render {
-  height: 100%;
-  position: fixed;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  width: 100%;
-  z-index: 99999;
-  background-color: #fff;
+  @apply h-full w-full top-0 left-0 right-0 bottom-0 fixed bg-white z-[999999]
+}
+
+main {
+  @apply relative lg:px-[100px] xl:px-[150px]
+}
+
+.wrapper {
+  @apply lg:pl-24 xl:pl-32
 }
 
 @media (prefers-reduced-motion: reduce) {

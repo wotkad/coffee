@@ -1,0 +1,49 @@
+.hero {
+  &__wrapper {
+    h1 {
+      @apply col-start-1 col-end-[33] row-start-1 row-end-2
+    }
+    @apply grid grid-cols-[repeat(32,minmax(0,1fr))] h-[calc(100vh-120px)] lg:pb-[100px] xl:pb-[150px] gap-5
+  }
+  &__heading {
+    font-family: $heading;
+    &-main {
+      @apply lg:text-[120px] lg:leading-[120px] xl:text-[146px] xl:leading-[146px]
+    }
+    &-secondary {
+      @apply lg:text-[53px] lg:leading-[53px] xl:text-[63px] xl:leading-[63px]
+    }
+    @apply font-bold uppercase block z-20 relative
+  }
+  &__slogan {
+    p {
+      @apply pl-4 border-l-4 border-brown-400 font-medium 
+    }
+    @apply col-start-1 lg:col-end-8 xl:col-end-7 row-start-5 row-end-6 z-20 relative lg:pb-24 xl:pb-[138px]
+  }
+  &__links {
+    @apply grid grid-cols-3 gap-6 lg:col-start-8 xl:col-start-7 col-end-[33] lg:mt-10 xl:mt-14 row-start-1 row-end-6
+  }
+  &__link {
+    img {
+      @apply w-full h-full object-cover duration-[1500ms] transition-transform rounded will-change-[transform]
+    }
+    h3 {
+      &:before {
+        @apply content-[''] absolute -left-20 bg-brown-400 h-full -z-[1] top-0 right-0 -translate-x-full transition-transform duration-700
+      }
+      @apply p-2 uppercase z-10 text-white lg:text-2xl xl:text-[32px] lg:leading-[24px] will-change-[transform] xl:leading-[32px] font-semibold absolute bottom-8 left-8
+    }
+    &:hover {
+      img {
+        @apply scale-110
+      }
+      h3 {
+        &:before {
+          @apply translate-x-8
+        }
+      }
+    }
+    @apply overflow-hidden rounded lg:max-h-[500px] xl:max-h-[715px] relative
+  }
+}

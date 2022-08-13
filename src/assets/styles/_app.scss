@@ -17,8 +17,5 @@
   Компоненты
 */
 @import "./components/header";
-
-/*
-  Страницы
-*/
-@import "./pages/index";
+@import "./components/sidebar";
+@import "./components/hero";

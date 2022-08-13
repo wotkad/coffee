@@ -1,0 +1,18 @@
+.sidebar {
+  &__logo {
+    svg {
+      width: 100%;
+    }
+    @apply lg:max-w-[86px] xl:max-w-[126px]
+  }
+  &__social {
+    @apply flex flex-col justify-between items-center
+  }
+  &__icon {
+    &:first-child {
+      @apply mt-0
+    }
+    @apply lg:mt-6 xl:mt-10 lg:w-5 xl:w-8 transition-transform duration-300 hover:scale-125
+  }
+  @apply z-20 pt-3 lg:pb-12 xl:pb-24 lg:max-w-[100px] xl:max-w-[150px] bg-brown-400 h-screen absolute left-0 top-0 w-full flex flex-col justify-between items-center
+}

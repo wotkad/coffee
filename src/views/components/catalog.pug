@@ -1,0 +1,31 @@
+include ../mixins/card.pug
+.content
+  .catalog__section#coffee  
+    h2.catalog__title Кофе
+    .catalog__description 
+      p Коллекция Samba Office разработана специально для заваривания в кофе-машинах любого типа — как в рожковых, так и в автоматических. Сбалансированный вкус, тщательно выверенная рецептура этих блендов делают их идеальными для приготовления любых напитков — от ристретто до латте и маккиато
+    .catalog__cards
+      +card('1', '/assets/images/coffee1.png', 'card', 'Espresso & cappuccino №5', '', true)
+      +card('2', '/assets/images/coffee2.png', 'card', 'Arabica №7', '', true)
+  .catalog__section#equipment
+    h2.catalog__title Оборудование
+    .catalog__cards
+      +card('3', '/assets/images/equipment1.png', 'card', 'Proxima  F11 Big', '', true)
+      +card('4', '/assets/images/equipment2.png', 'card', 'Proxima  F12 plus', '', true)
+      +card('5', '/assets/images/equipment3.png', 'card', 'Proxima F12 plus', '', true)
+      +card('6', '/assets/images/equipment4.png', 'card', 'Холодильник Proxima SC08', '', true)
+  .catalog__section#tea
+    h2.catalog__title  Чай
+    .catalog__cards
+      +card('7', '/assets/images/tea1.png', 'card', 'Mediterranean mandarin', 'черный чай, 100 г', false)
+      +card('8', '/assets/images/tea2.png', 'card', 'Pure peppermint leaves', 'зеленый чай, 34 г', false)
+      +card('9', '/assets/images/tea3.png', 'card', 'Dombagastalawa single estate fbop', 'черный чай, 85 г', false)
+      +card('10', '/assets/images/tea4.png', 'card', 'Brilliant breakfast', 'черный чай, 50 шт.', false)
+      +card('11', '/assets/images/tea5.png', 'card', 'Mango & strawberry', 'зеленый чай, 50 шт.', false)
+      +card('12', '/assets/images/tea6.png', 'card', 'Pure chamomile flowers', 'черный чай, 30 шт.', false)
+  .catalog__section#accessories
+    h2.catalog__title Аксессуары
+    .catalog__cards
+      +card('13', '/assets/images/accessories7.png', 'card', 'Мерная ложка', '30 мл', false)
+      +card('14', '/assets/images/accessories8.png', 'card', 'Одноразовые стаканчики', '300 мл', false)
+      +card('15', '/assets/images/accessories9.png', 'card', 'Размешиватель деревянный', '18 см', false)

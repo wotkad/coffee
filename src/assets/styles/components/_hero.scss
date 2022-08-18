@@ -3,7 +3,7 @@
     h1 {
       @apply col-start-1 col-end-[33] row-start-1 row-end-2
     }
-    @apply grid grid-cols-[repeat(32,minmax(0,1fr))] h-[calc(100vh-120px)] lg:pb-[100px] xl:pb-[150px] gap-5
+    @apply grid grid-cols-[repeat(32,minmax(0,1fr))] h-[calc(100vh-120px)] lg:py-[100px] xl:pt-[100px] xl:pb-[150px] gap-5
   }
   &__heading {
     font-family: $heading;

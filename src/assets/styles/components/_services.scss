@@ -1,0 +1,49 @@
+.services {
+  &__back {
+    svg {
+      path {
+        @apply transition-colors duration-300
+      }
+    }
+    span {
+      @apply text-gray-400 text-sm inline-block ml-3 duration-300 will-change-[color] transition-colors
+    }
+    &:hover {
+      svg {
+        path {
+          @apply fill-brown-400
+        }
+      }
+      span {
+        @apply text-brown-400
+      }
+    }
+    @apply flex items-center absolute z-10 top-[132px] left-14
+  }
+  &__image {
+    img {
+      @apply lg:max-w-[800px] xl:max-w-[1252px] xl:max-h-[792px]
+    }
+    @apply h-full flex items-center absolute left-0 top-0
+  }
+  &__content {
+    h2 {
+      font-family: $heading;
+      @apply uppercase text-[63px] leading-[63px]
+    }
+    ul {
+      li {
+        &:before {
+          @apply content-[''] absolute left-0 w-7 h-[3px] bg-brown-400 top-[11px]
+        }
+        &:first-child {
+          @apply mt-0
+        }
+        @apply mt-8 xl:text-[18px] relative pl-12 tracking-widest
+      }
+      @apply mt-[57px]
+    }
+    @apply lg:max-w-[580px] xl:max-w-[630px] pt-[71px] relative z-10 ml-auto
+  }
+  @apply flex justify-between pt-[112px] relative h-full
+}

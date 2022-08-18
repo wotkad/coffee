@@ -1,0 +1,49 @@
+.navigation {
+  &__container {
+    @apply fixed top-0 pt-[132px] pl-14
+  }
+  &__back {
+    svg {
+      path {
+        @apply transition-colors duration-300
+      }
+    }
+    span {
+      @apply text-gray-400 text-sm inline-block ml-3 duration-300 will-change-[color] transition-colors
+    }
+    &:hover {
+      svg {
+        path {
+          @apply fill-brown-400
+        }
+      }
+      span {
+        @apply text-brown-400
+      }
+    }
+    @apply flex items-center 
+  }
+  &__categories {
+    h2 {
+      font-family: $heading;
+      @apply text-[22px] uppercase font-bold
+    }
+    a {
+      &:hover {
+        @apply text-brown-400
+      }
+      @apply tracking-widest text-gray-400 uppercase inline-block mt-8 mr-10 transition-colors duration-300 will-change-[color]
+    }
+    @apply mt-16
+  }
+  &__menu {
+    a {
+      &:first-child {
+        @apply mt-0 
+      }
+      @apply tracking-widest text-[18px] font-bold uppercase inline-block lg:mt-12 xl:mt-[88px] border-b-4 border-transparent will-change-[border-color] hover:border-brown-400 duration-300
+    }
+    @apply lg:mt-16 xl:mt-36 flex flex-col items-start
+  }
+  @apply shadow-[0_4px_20px_rgba(0,0,0,0.15)] max-w-[355px] bg-white w-full z-20 fixed left-0 lg:ml-[100px] xl:ml-[150px] top-0 h-full
+}

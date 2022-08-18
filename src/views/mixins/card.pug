@@ -1,0 +1,64 @@
+mixin card(id, image, alt, title, text, button)
+  .card
+    .card__inner
+      label.card__add.call-popup(data-button=""+id)
+        input(type="checkbox" name="card" value=""+title)
+        <svg class="card__plus" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10V5.5M5.5 5.5V1M5.5 5.5H10M5.5 5.5H1" stroke="black" stroke-linecap="round"/></svg>
+        <svg class="card__added" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.12491 7.03568L1.93741 4.74401C1.88021 4.68336 1.81209 4.6352 1.73699 4.60233C1.66189 4.56946 1.5813 4.55254 1.49991 4.55254C1.41852 4.55254 1.33794 4.56946 1.26284 4.60233C1.18774 4.6352 1.11962 4.68336 1.06241 4.74401C1.00451 4.80394 0.958544 4.87531 0.927169 4.95399C0.895794 5.03266 0.879639 5.11708 0.879639 5.20235C0.879639 5.28761 0.895794 5.37203 0.927169 5.45071C0.958544 5.52939 1.00451 5.60076 1.06241 5.66068L3.68116 8.40413C3.92491 8.65949 4.31866 8.65949 4.56241 8.40413L11.1874 1.47021C11.2453 1.41028 11.2913 1.33891 11.3227 1.26023C11.354 1.18156 11.3702 1.09714 11.3702 1.01187C11.3702 0.926606 11.354 0.842187 11.3227 0.763511C11.2913 0.684834 11.2453 0.613464 11.1874 0.553539C11.1302 0.492882 11.0621 0.444723 10.987 0.411854C10.9119 0.378985 10.8313 0.362061 10.7499 0.362061C10.6685 0.362061 10.5879 0.378985 10.5128 0.411854C10.4377 0.444723 10.3696 0.492882 10.3124 0.553539L4.12491 7.03568Z" fill="white"/></svg>
+      img(src=""+image, alt=""+alt)
+      h3= title
+      if text 
+        p.card__text= text
+      else if button !== false
+        button(type="button").card__more Подробнее
+    .card-popup(data-popup=""+id)
+      label.card-popup__add.call-popup(data-button=""+id)
+        input(type="checkbox" name="card" value="")
+        <svg class="card-popup__plus" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10V5.5M5.5 5.5V1M5.5 5.5H10M5.5 5.5H1" stroke="black" stroke-linecap="round"/></svg>
+        <svg class="card-popup__added" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.12491 7.03568L1.93741 4.74401C1.88021 4.68336 1.81209 4.6352 1.73699 4.60233C1.66189 4.56946 1.5813 4.55254 1.49991 4.55254C1.41852 4.55254 1.33794 4.56946 1.26284 4.60233C1.18774 4.6352 1.11962 4.68336 1.06241 4.74401C1.00451 4.80394 0.958544 4.87531 0.927169 4.95399C0.895794 5.03266 0.879639 5.11708 0.879639 5.20235C0.879639 5.28761 0.895794 5.37203 0.927169 5.45071C0.958544 5.52939 1.00451 5.60076 1.06241 5.66068L3.68116 8.40413C3.92491 8.65949 4.31866 8.65949 4.56241 8.40413L11.1874 1.47021C11.2453 1.41028 11.2913 1.33891 11.3227 1.26023C11.354 1.18156 11.3702 1.09714 11.3702 1.01187C11.3702 0.926606 11.354 0.842187 11.3227 0.763511C11.2913 0.684834 11.2453 0.613464 11.1874 0.553539C11.1302 0.492882 11.0621 0.444723 10.987 0.411854C10.9119 0.378985 10.8313 0.362061 10.7499 0.362061C10.6685 0.362061 10.5879 0.378985 10.5128 0.411854C10.4377 0.444723 10.3696 0.492882 10.3124 0.553539L4.12491 7.03568Z" fill="white"/></svg>
+      .card-popup__close
+        <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0.707041L1.51472 15.1923M15.2929 15.1923L0.807617 0.707031" stroke="#676767" stroke-linecap="round"/></svg>
+      .card-popup__wrapper
+        .card-popup__image
+          .card-popup__inner
+            img(src=""+image, alt=""+alt)
+          .card-popup__button.call-popup(data-button=""+id)
+            button(type="button") 
+              .add Добавить
+          .done 
+            <svg width="15" height="14" viewBox="0 0 15 14" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.1562 11.5L2.42183 8.58338C2.35033 8.50618 2.26517 8.44489 2.17129 8.40305C2.07742 8.36122 1.97669 8.33968 1.87495 8.33968C1.77321 8.33968 1.67249 8.36122 1.57861 8.40305C1.48474 8.44489 1.39958 8.50618 1.32808 8.58338C1.2557 8.65965 1.19824 8.75048 1.15902 8.85062C1.1198 8.95075 1.09961 9.05819 1.09961 9.16671C1.09961 9.27523 1.1198 9.38268 1.15902 9.48281C1.19824 9.58294 1.2557 9.67378 1.32808 9.75005L4.60152 13.2417C4.9062 13.5667 5.39839 13.5667 5.70308 13.2417L13.9843 4.41671C14.0567 4.34044 14.1142 4.24961 14.1534 4.14948C14.1926 4.04934 14.2128 3.9419 14.2128 3.83338C14.2128 3.72486 14.1926 3.61742 14.1534 3.51728C14.1142 3.41715 14.0567 3.32632 13.9843 3.25005C13.9128 3.17285 13.8277 3.11155 13.7338 3.06972C13.6399 3.02789 13.5392 3.00635 13.4375 3.00635C13.3357 3.00635 13.235 3.02789 13.1411 3.06972C13.0472 3.11155 12.9621 3.17285 12.8906 3.25005L5.1562 11.5Z" fill="#676767"/></svg>
+            span Добавлено
+          .delete.call-popup(data-button=""+id) Удалить
+        .card-popup__content 
+          .card-popup__body
+            h2= title
+            p Универсальная кофемашина, подходящая для заведений любых форматов. Кофемашина Proxima  F11 Big учитывает все потребности и способна приготовить 29 различных напитков, включая каппучино и латте маккиато, одним нажатием на кнопку.
+            ul.card-popup__list
+              li.card-popup__item
+                .card-popup__title Тело
+                .card-popup__desc
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot
+              li.card-popup__item
+                .card-popup__title Кислотность
+                .card-popup__desc
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot.card-popup__dot-active
+                  .card-popup__dot
+                  .card-popup__dot
+                  .card-popup__dot
+              li.card-popup__item
+                .card-popup__title Обжарка
+                .card-popup__desc Темная
+              li.card-popup__item
+                .card-popup__title Вкус
+                .card-popup__desc Густой, насыщенный, с нотками темного шоколада и тонкой сладостью абрикоса
+              li.card-popup__item
+                .card-popup__title Аромат
+                .card-popup__desc Согревающий, деликатный, фруктовый 
+          .card-popup__footer 
+            .card-popup__weight 1000 г
+            .card-popup__price 1250₽

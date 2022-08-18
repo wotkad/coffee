@@ -1,0 +1,39 @@
+.card {
+  &__add {
+    input {
+      @apply absolute invisible top-0 left-0
+    }
+    &.active {
+      .card__plus {
+        @apply hidden
+      }
+      .card__added {
+        @apply block ml-[1px]
+      }
+      @apply bg-brown-400
+    }
+    @apply cursor-pointer absolute w-[29px] h-[29px] rounded-full flex justify-center items-center right-6 top-6 bg-brown-300 transition-colors duration-300 will-change-[background-color] hover:bg-brown-400
+  }
+  &__plus {
+    @apply block
+  }
+  &__added {
+    @apply hidden
+  }
+  h3 {
+    @apply mt-4 text-xl font-bold text-center
+  }
+  img {
+    @apply lg:w-[200px] lg:h-[200px] xl:w-[290px] xl:h-[290px] object-cover select-none
+  }
+  &__more {
+    @apply border-brown-400 leading-[28px] tracking-widest border text-center rounded mt-10 py-2 px-8 uppercase text-brown-400 transition-colors will-change-[color,background-color] duration-300 hover:text-white hover:bg-brown-400
+  }
+  &__text {
+    @apply mt-12 text-gray-400 text-center text-[21px] tracking-wider mb-3
+  }
+  &__inner {
+    @apply relative flex items-center flex-col pt-12 pb-6 px-5
+  }
+  @apply border border-gray-300
+}

@@ -1,7 +1,10 @@
+* {
+  @apply outline-none
+}
+
 html,
 body {
   height: 100%;
-  scroll-behavior: smooth;
   text-rendering: optimizeSpeed;
 }
 
@@ -15,7 +18,18 @@ body {
 }
 
 main {
-  @apply relative lg:px-[100px] xl:px-[150px]
+  &:before {
+    @apply content-[''] fixed lg:w-[calc(100%-200px)] xl:w-[calc(100%-300px)] bg-white pl-[355px] lg:ml-[100px] xl:ml-[150px] top-0 h-[112px] z-20
+  }
+  @apply relative lg:px-[100px] xl:px-[150px] w-full h-full
+}
+
+.content {
+  @apply lg:ml-[455px] xl:ml-[605px] lg:w-[calc(100%-455px)] xl:w-[calc(100%-605px)] pt-[112px] overflow-hidden
+}
+
+.barba {
+  @apply w-full h-full
 }
 
 .wrapper {

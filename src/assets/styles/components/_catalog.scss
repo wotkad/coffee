@@ -1,0 +1,15 @@
+.catalog {
+  &__title {
+    font-family: $heading;
+    @apply uppercase text-[44px] leading-[44px]
+  }
+  &__description {
+    p {
+      @apply col-span-3 max-w-[729px]
+    }
+    @apply mt-4 grid grid-cols-3 lg:mb-10 xl:mb-14
+  }
+  &__cards {
+    @apply relative mt-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:pb-16 xl:pb-[88px]
+  }
+}

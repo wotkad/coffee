@@ -1,0 +1,117 @@
+.card-popup {
+  &.active {
+    @apply translate-x-full
+  }
+  &__add {
+    input {
+      @apply absolute invisible top-0 left-0
+    }
+    &.active {
+      .card-popup__plus {
+        @apply hidden
+      }
+      .card-popup__added {
+        @apply block ml-[1px]
+      }
+      @apply bg-brown-400
+    }
+    @apply cursor-pointer absolute w-[29px] h-[29px] rounded-full flex justify-center items-center right-16 top-6 bg-brown-300 transition-colors duration-300 will-change-[background-color] hover:bg-brown-400
+  }
+  &__plus {
+    @apply block
+  }
+  &__added {
+    @apply hidden
+  }
+  &__close {
+    @apply top-[31px] right-6 absolute cursor-pointer
+  }
+  &__wrapper {
+    @apply flex justify-center lg:flex-col xl:flex-row
+  }
+  &__inner {
+    @apply lg:w-[290px] lg:h-[290px] xl:w-[354px] xl:h-[354px] 
+  }
+  &__image {
+    img {
+      @apply w-full h-full object-cover select-none
+    }
+    @apply xl:mr-10 flex flex-col items-center xl:basis-4/12 justify-center
+  }
+  &__button {
+    .add {
+      @apply block border-brown-400 leading-[28px] tracking-widest border text-center overflow-hidden rounded py-2 px-10 uppercase text-brown-400 transition-colors will-change-[color,background-color] duration-300 hover:text-white hover:bg-brown-400
+    }
+    &.active {
+      .add {
+        @apply hidden
+      }
+      & + .done {
+        & + .delete {
+          @apply block
+        }
+        @apply flex
+      }
+    }
+  }
+  .add {
+    @apply mt-[34px]
+  }
+  .done {
+    span {
+      @apply ml-[6px] text-gray-400 font-medium
+    }
+    @apply hidden items-center cursor-default pointer-events-none mt-[6px]
+  }
+  .delete {
+    @apply hidden mt-[10px] text-brown-400 transition-colors duration-300 hover:text-black cursor-pointer text-xs font-medium
+  }
+  &__content {
+    h2 {
+      @apply lg:text-2xl xl:text-[32px] font-bold
+    }
+    p {
+      & + .card-popup__list {
+        .card-popup__item {
+          @apply py-[11px]
+        }
+      }
+      @apply text-gray-400 text-xs mt-4
+    }
+    @apply pt-3 basis-8/12 flex flex-col justify-between lg:mt-[46px] xl:mt-0
+  }
+  &__footer {
+    @apply flex items-center lg:mt-10 xl:mt-14
+  }
+  &__weight {
+    @apply text-gray-400 text-[21px] leading-[21px] basis-4/12 tracking-widest
+  }
+  &__price {
+    @apply text-brown-400 text-[21px] leading-[21px] basis-8/12 tracking-widest
+  }
+  &__dot {
+    &-active {
+      @apply bg-brown-400
+    }
+    &:last-child {
+      @apply mr-0
+    }
+    @apply mr-4 w-[14px] h-[14px] bg-gray-300 rounded-full 
+  }
+  &__item {
+    &:last-child {
+      @apply border-b-0
+    }
+    @apply border-b border-gray-300 lg:py-4 xl:py-[21px] flex items-center justify-between
+  }
+  &__list {
+    @apply mt-[15px]
+  }
+  &__title {
+    @apply text-xs leading-[12px] basis-4/12
+  }
+  &__desc {
+    @apply text-[11px] leading-[14px] text-gray-400 basis-8/12 flex
+  }
+  @apply border border-gray-300 transition-transform duration-1000 -left-full absolute bg-white pt-8 lg:pr-8 xl:pr-[107px] pb-7 pl-8 w-full z-10 top-0
+}

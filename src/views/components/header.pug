@@ -5,7 +5,8 @@ mixin header(currentPage)
         a.header__contact(href="mailto:info@sambacafe.ru") info@sambacafe.ru
         a.header__contact(href="tel:+7 (495) 721-95-17") +7 (495) 721-95-17
       nav.header__menu
-        a.header__link(href='/catalog/', class=currentPage === 'catalog' ? 'active' : '') Каталог
-        a.header__link(href='/offers/', class=currentPage === 'offers' ? 'active' : '') Специальные предложения
-        a.header__link(href='/services/', class=currentPage === 'services' ? 'active' : '') Услуги
+        a.header__link(href='/catalog', class=currentPage === 'catalog' ? 'active' : '') Каталог
+        a.header__link(href='/offers', class=currentPage === 'offers' ? 'active' : '') Специальные предложения
+        a.header__link(href='/services', class=currentPage === 'services' ? 'active' : '') Услуги
         button(type="button").callback Оставить заявку
+          .callback__counter

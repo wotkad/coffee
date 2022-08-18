@@ -6,11 +6,12 @@ mixin card(id, image, alt, title, text, button)
         <svg class="card__plus" width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M5.5 10V5.5M5.5 5.5V1M5.5 5.5H10M5.5 5.5H1" stroke="black" stroke-linecap="round"/></svg>
         <svg class="card__added" width="12" height="9" viewBox="0 0 12 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M4.12491 7.03568L1.93741 4.74401C1.88021 4.68336 1.81209 4.6352 1.73699 4.60233C1.66189 4.56946 1.5813 4.55254 1.49991 4.55254C1.41852 4.55254 1.33794 4.56946 1.26284 4.60233C1.18774 4.6352 1.11962 4.68336 1.06241 4.74401C1.00451 4.80394 0.958544 4.87531 0.927169 4.95399C0.895794 5.03266 0.879639 5.11708 0.879639 5.20235C0.879639 5.28761 0.895794 5.37203 0.927169 5.45071C0.958544 5.52939 1.00451 5.60076 1.06241 5.66068L3.68116 8.40413C3.92491 8.65949 4.31866 8.65949 4.56241 8.40413L11.1874 1.47021C11.2453 1.41028 11.2913 1.33891 11.3227 1.26023C11.354 1.18156 11.3702 1.09714 11.3702 1.01187C11.3702 0.926606 11.354 0.842187 11.3227 0.763511C11.2913 0.684834 11.2453 0.613464 11.1874 0.553539C11.1302 0.492882 11.0621 0.444723 10.987 0.411854C10.9119 0.378985 10.8313 0.362061 10.7499 0.362061C10.6685 0.362061 10.5879 0.378985 10.5128 0.411854C10.4377 0.444723 10.3696 0.492882 10.3124 0.553539L4.12491 7.03568Z" fill="white"/></svg>
       img(src=""+image, alt=""+alt)
-      h3= title
-      if text 
-        p.card__text= text
-      else if button !== false
-        button(type="button").card__more Подробнее
+      .card__content
+        h3= title
+        if text 
+          p.card__text= text
+        else if button !== false
+          button(type="button").card__more Подробнее
     .card-popup(data-popup=""+id)
       label.card-popup__add.call-popup(data-button=""+id)
         input(type="checkbox" name="card" value="")

@@ -26,7 +26,7 @@
   }
   &__link {
     img {
-      @apply w-full h-full object-cover duration-[1500ms] transition-transform rounded will-change-[transform]
+      @apply w-full h-full object-cover duration-[1500ms] transition-transform rounded will-change-transform
     }
     h3 {
       &:before {

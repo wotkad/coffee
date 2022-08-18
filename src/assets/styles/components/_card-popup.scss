@@ -27,7 +27,7 @@
     @apply top-[31px] right-6 absolute cursor-pointer
   }
   &__wrapper {
-    @apply flex justify-center lg:flex-col xl:flex-row
+    @apply flex justify-center lg:flex-col
   }
   &__inner {
     @apply lg:w-[290px] lg:h-[290px] xl:w-[354px] xl:h-[354px] 
@@ -36,7 +36,7 @@
     img {
       @apply w-full h-full object-cover select-none
     }
-    @apply xl:mr-10 flex flex-col items-center xl:basis-4/12 justify-center
+    @apply flex flex-col items-center justify-center
   }
   &__button {
     .add {
@@ -55,7 +55,7 @@
     }
   }
   .add {
-    @apply mt-[34px]
+    @apply lg:mt-[36px] xl:mt-[32px]
   }
   .done {
     span {
@@ -64,7 +64,7 @@
     @apply hidden items-center cursor-default pointer-events-none mt-[6px]
   }
   .delete {
-    @apply hidden mt-[10px] text-brown-400 transition-colors duration-300 hover:text-black cursor-pointer text-xs font-medium
+    @apply hidden mt-[10px] text-brown-400 transition-colors will-change-[color] duration-300 hover:text-black cursor-pointer text-xs font-medium
   }
   &__content {
     h2 {
@@ -78,7 +78,7 @@
       }
       @apply text-gray-400 text-xs mt-4
     }
-    @apply pt-3 basis-8/12 flex flex-col justify-between lg:mt-[46px] xl:mt-0
+    @apply pt-3 basis-8/12 flex flex-col justify-between lg:mt-[46px]
   }
   &__footer {
     @apply flex items-center lg:mt-10 xl:mt-14
@@ -113,5 +113,19 @@
   &__desc {
     @apply text-[11px] leading-[14px] text-gray-400 basis-8/12 flex
   }
-  @apply border border-gray-300 transition-transform duration-1000 -left-full absolute bg-white pt-8 lg:pr-8 xl:pr-[107px] pb-7 pl-8 w-full z-10 top-0
+  @apply border border-gray-300 transition-transform duration-[800ms] -left-full absolute bg-white pt-8 lg:pr-8 pb-7 pl-8 w-full z-10 top-0
+}
+@media(min-width: 1919px) {
+  .card-popup {
+    &__wrapper {
+      @apply flex-row
+    }
+    &__image {
+      @apply mr-10 basis-4/12
+    }
+    &__content {
+      @apply mt-0
+    }
+    @apply pr-[107px]
+  }
 }

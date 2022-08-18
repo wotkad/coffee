@@ -10,6 +10,13 @@
     @apply mt-4 grid grid-cols-3 lg:mb-10 xl:mb-14
   }
   &__cards {
-    @apply relative mt-10 grid lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:pb-16 xl:pb-[88px]
+    @apply relative mt-10 grid lg:grid-cols-2 gap-6 lg:pb-16 xl:pb-[88px]
+  }
+}
+@media(min-width: 1919px) {
+  .catalog {
+    &__cards {
+      @apply grid-cols-3
+    }
   }
 }

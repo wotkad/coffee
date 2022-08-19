@@ -5,6 +5,7 @@ import gsap from "gsap";
 import isCurrentPage from "js/linksChecker/isCurrentPage/isCurrentPage";
 import cardPopup from "js/cardPopup/cardPopup";
 import addToCard from "js/addToCard/addToCard";
+import scrollByAnchor from "js/scroll/scrollByAnchor/scrollByAnchor";
 
 barba.use(barbaPrefetch);
 
@@ -34,6 +35,7 @@ barba.init({
         });
       },
       afterLeave(data) {
+        $('body,html').animate({scrollTop: 0}, 200);
         return gsap.to(data.current.container, 0, {
           display: 'none',
         });
@@ -42,6 +44,7 @@ barba.init({
         isCurrentPage();
         cardPopup();
         addToCard();
+        scrollByAnchor();
         return gsap.from(data.next.container, .3, {
           opacity: 0
         });

@@ -15,3 +15,4 @@ require("./scroll/scrollReveal/scrollReveal");
 require("./linksChecker/checkTarget/checkTarget");
 require("./cardPopup/cardPopup");
 require("./addToCard/addToCard");
+require("./scroll/scrollByAnchor/scrollByAnchor");

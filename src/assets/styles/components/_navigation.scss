@@ -44,7 +44,7 @@
       &.active {
         @apply border-brown-400
       }
-      @apply tracking-widest text-[18px] font-bold uppercase inline-block lg:mt-12 xl:mt-[88px] border-b-4 border-transparent will-change-[border-color] hover:border-brown-400 duration-300
+      @apply tracking-widest text-lg font-bold uppercase inline-block lg:mt-12 xl:mt-[88px] border-b-4 border-transparent will-change-[border-color] hover:border-brown-400 duration-300
     }
     @apply lg:mt-16 xl:mt-36 flex flex-col items-start
   }

@@ -61,7 +61,7 @@
     span {
       @apply ml-[6px] text-gray-400 font-medium
     }
-    @apply hidden items-center cursor-default pointer-events-none md:mt-2
+    @apply hidden items-center cursor-default pointer-events-none md:mt-2 xl:mt-1
   }
   .delete {
     @apply hidden mt-[10px] text-brown-400 transition-colors will-change-[color] duration-300 hover:text-black cursor-pointer text-xs font-medium

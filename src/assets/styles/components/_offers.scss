@@ -50,7 +50,7 @@
   .back {
     @apply hidden lg:flex
   }
-  @apply flex pt-[112px] relative h-full flex-col lg:flex-row lg:mx-[50px] px-8 lg:px-0 pb-8 lg:pb-0
+  @apply flex pt-[112px] relative h-full flex-col lg:flex-row lg:mx-[50px] px-8 lg:px-0 pb-8 lg:pb-0 justify-between
 }
 
 @media(min-width: 1440px) {

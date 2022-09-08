@@ -1,7 +1,7 @@
 .hero {
   &__wrapper {
     h1 {
-      @apply md:col-start-1 md:col-end-[33] md:row-start-1 md:row-end-2
+      @apply md:col-start-1 md:col-end-[33] md:row-start-1 md:row-end-2 pointer-events-none
     }
     @apply overflow-x-hidden md:overflow-visible px-4 md:px-8 pt-[84px] md:pt-[126px] pb-[160px] md:pb-[134px] lg:px-0 lg:grid md:grid-cols-[repeat(32,minmax(0,1fr))] lg:h-[calc(100vh-120px)] py-[100px] xl:pt-[100px] xl:pb-[150px] md:gap-5
   }

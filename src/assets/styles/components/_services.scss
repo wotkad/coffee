@@ -30,7 +30,7 @@
     ul {
       li {
         &:before {
-          @apply content-[''] absolute md:left-0 w-[35px] md:w-7 h-[3px] bg-brown-400 md:top-[11px] top-0 left-1/2 -translate-x-1/2 md:translate-x-0
+          @apply content-[''] absolute md:left-0 w-[35px] md:w-7 h-[3px] bg-brown-400 top-0 md:top-4 xl:top-5 left-1/2 -translate-x-1/2 md:translate-x-0
         }
         &:first-child {
           @apply mt-0

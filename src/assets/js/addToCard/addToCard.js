@@ -1,6 +1,11 @@
 import $ from "jquery";
 
 export default function addToCard() {
+  let currentTimeStamp = +new Date();
+  if (currentTimeStamp >= localStorage.selectedTimeStamp) {
+    localStorage.clear();
+  }
+
   let counter = $('.callback__counter');
   let popupCounter = $('.popup__heading span');
   let button = $('.call-popup');
@@ -58,6 +63,7 @@ export default function addToCard() {
             src: mainCallButton.next().attr('src'),
             alt: mainCallButton.next().attr('alt'),
           });
+          localStorage.setItem('selectedTimeStamp', +new Date() + 3600 * 1000);
           // Создаем карточеки в форме заявки
           popupCards.append(
             `

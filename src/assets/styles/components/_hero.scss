@@ -48,11 +48,10 @@
     }
   }
   .swiper-wrapper {
+    .swiper-slide {
+      @apply overflow-hidden rounded md:max-h-[500px] xl:max-h-[715px] relative
+    }
     @apply md:grid md:grid-cols-3 md:gap-6 
-  }
-  
-  .swiper-slide {
-    @apply overflow-hidden rounded md:max-h-[500px] xl:max-h-[715px] relative
   }
 
   .swiper-pagination-horizontal {
@@ -69,7 +68,7 @@
             @apply hidden
           }
         }
-        @apply flex items-center relative w-auto h-auto bg-transparent rounded-none text-xl leading-[20px] text-gray-100 mx-[22px] opacity-100
+        @apply duration-300 transition-colors will-change-[background-color] flex items-center relative w-auto h-auto bg-transparent rounded-none text-xl leading-[20px] text-gray-100 mx-[22px] opacity-100
       }
       @apply flex justify-center md:hidden -bottom-12
     }

@@ -128,10 +128,10 @@
       @apply flex-row
     }
     &__image {
-      @apply mr-10 basis-4/12
+      @apply basis-4/12
     }
     &__content {
-      @apply mt-0
+      @apply ml-10 mt-0
     }
     @apply pr-[107px]
   }

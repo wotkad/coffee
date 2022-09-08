@@ -3,7 +3,7 @@
     img {
       @apply w-full 
     }
-    @apply absolute left-1/2 -translate-x-1/2 md:static order-2 lg:order-none lg:pl-20 xl:pl-[102px] lg:pt-20 xl:pt-[100px] lg:mr-20 xl:mr-[124px] lg:w-1/2 md:w-[447px] md:ml-auto lg:ml-0 md:mt-5 lg:mt-0 w-[276px] top-[172px] md:top-auto
+    @apply absolute left-1/2 -translate-x-1/2 lg:translate-x-0 md:static order-2 lg:order-none lg:pl-20 xl:pl-[102px] lg:pt-20 xl:pt-[100px] lg:mr-20 xl:mr-[124px] lg:w-1/2 md:w-[447px] md:ml-auto lg:ml-0 md:mt-5 lg:mt-0 w-[276px] top-[172px] md:top-auto
   }
   &__content {
     h2 {
@@ -31,7 +31,7 @@
       span {
         @apply text-brown-400
       }
-      @apply mt-[323px] text-center md:text-left text-lg leading-[28px] lg:mb-16 xl:mb-24 md:mt-8 max-w-[310px]
+      @apply mx-auto md:mx-0 mt-[323px] text-center md:text-left text-lg leading-[28px] lg:mb-16 xl:mb-24 md:mt-8 max-w-[310px]
     }
     ul {
       li {

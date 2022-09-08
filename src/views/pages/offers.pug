@@ -18,4 +18,7 @@ block content
   include ../components/sidebar.pug
   .barba(data-barba="wrapper")
     main(data-barba="container" data-barba-namespace="offers")
+      include ../components/offers.pug
+    button(type="button").callback.hidden__button Оставить заявку
+      .callback__counter
 

@@ -6,13 +6,18 @@
         span.hero__heading.hero__heading-secondary collection
       .hero__slogan 
         p Идеальные решения для<br> настоящих ценителей кофе
-      .hero__links 
-        a.hero__link(href="/category/")
-          h3 Pro
-          img(src="/assets/images/pro.webp", alt="pro")
-        a.hero__link(href="/category/")
-          h3 Office
-          img(src="/assets/images/office.webp", alt="office")
-        a.hero__link(href="/category/")
-          h3 Vending
-          img(src="/assets/images/vending.webp", alt="vending")
+      .hero__links.swiper-hero
+        .swiper-wrapper 
+          .swiper-slide
+            a.hero__link(href="/category/")
+              h3 Pro
+              img(src="/assets/images/pro.webp", alt="pro")
+          .swiper-slide
+            a.hero__link(href="/category/")
+              h3 Office
+              img(src="/assets/images/office.webp", alt="office")
+          .swiper-slide
+            a.hero__link(href="/category/")
+              h3 Vending
+              img(src="/assets/images/vending.webp", alt="vending")
+        .swiper-pagination

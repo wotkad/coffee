@@ -1,0 +1,20 @@
+.error {
+  &__image {
+    & svg {
+      @apply max-h-[115px] md:max-h-full max-w-[335px] md:max-w-[668px] lg:max-w-[600px] xl:max-w-[700px]
+    }
+  }
+  &__title {
+    svg {
+      @apply max-h-[157px] md:max-h-full max-w-[233px] md:max-w-full
+    }
+    @apply -mt-12 md:-mt-28
+  }
+  p {
+    @apply max-w-[272px] md:max-w-full text-center tracking-widest text-lg -mt-2
+  }
+  a {
+    @apply uppercase rounded border-brown-400 py-2 px-[15px] transition-colors text-brown-400 border mt-12 md:mt-[39px] lg:mt-12 tracking-widest will-change-[background-color,color] hover:bg-brown-400 hover:text-white
+  }
+  @apply flex flex-col items-center justify-center pt-[140px] md:pt-[112px]
+}

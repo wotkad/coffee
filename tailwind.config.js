@@ -5,8 +5,8 @@ module.exports = {
       xs: '320px',
       sm: '375px',
       md: '768px',
-      lg: '1024px',
-      xl: '1441px',
+      lg: '1337px',
+      xl: '1580px',
     },
     extend: {
       colors: {
@@ -15,10 +15,15 @@ module.exports = {
           400: '#C8A880',
         },
         gray: {
+          100: '#D9D9D9',
+          200: '#A6A6A6',
           300: '#D9D9D9',
           400: '#676767',
         }
       }
+    },
+    fontFamily: {
+      'heading': ['Jost'],
     }
   },
   variants: {

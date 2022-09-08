@@ -1,9 +1,10 @@
+.popup-bg
 .popup
   .popup__close 
     <svg width="17" height="16" viewBox="0 0 17 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16 0.707041L1.51472 15.1923M15.2929 15.1923L0.807617 0.707031" stroke="#676767" stroke-linecap="round"/></svg>
   form(action="#").popup__form 
     h2 Оставить заявку
-    p Заполните форму , чтобы мы могли связаться с вами. Если у вас возникли вопросы,  свяжитесь с нами по телефону горячей линии <a href="tel:+7 (495) 721-95-17">7 (495) 721-95-17</a> или напишите на почту <a href="mailto:info@sambacafe.ru">info@sambacafe.ru</a>
+    .popup__text Заполните форму , чтобы мы могли связаться с вами. Если у вас возникли вопросы,  свяжитесь с нами по телефону горячей линии <a href="tel:+7 (495) 721-95-17">7 (495) 721-95-17</a> или напишите на почту <a href="mailto:info@sambacafe.ru">info@sambacafe.ru</a>
     .popup__input 
       input(type="text" required name="name" placeholder="Имя*")
     .popup__input 
@@ -12,4 +13,12 @@
       input(type="email" name="email" placeholder="E-mail")
     .popup__input 
       textarea(name="text" placeholder="Комментарий")
-    button(type="button") Отправить заявку
+    label.popup__policy
+      input(type="checkbox" value="policy" required)
+      p Я согласен с условиями <a href="#" target="_blank">обработки персональных данных</a>
+    button(type="submit") Отправить заявку
+    .popup__cart
+      .popup__heading
+        h3 Позиций в заявке: 
+          span 0
+      .popup__cards

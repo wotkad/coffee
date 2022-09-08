@@ -1,4 +1,7 @@
 .popup {
+  &-bg {
+    @apply fixed top-0 left-0 w-full h-full bg-black z-[130] hidden opacity-80
+  }
   &__close {
     svg {
       path {
@@ -12,29 +15,133 @@
         }
       }
     }
-    @apply absolute right-11 top-12 cursor-pointer
+    @apply absolute top-5 right-4 md:right-11 md:top-12 cursor-pointer
+  }
+  &__form {
+    @apply flex flex-col md:grid md:grid-cols-2 md:gap-3 xl:block px-4 md:px-0 -mx-4 md:mx-0 w-[calc(100%+32px)] md:w-auto
   }
   h2 {
-    font-family: $heading;
-    @apply text-[22px] leading-[22px] uppercase font-bold
+    @apply text-[22px] leading-[22px] uppercase font-bold col-span-2 font-heading
   }
-  p {
+  &__text {
     a {
       @apply transition-colors hover:text-brown-400 will-change-[color]
     }
-    @apply mt-8 text-[11px] text-gray-400 leading-[16px] mb-8
+    @apply mt-4 md:mt-8 text-xs text-gray-400 leading-[16px] mb-6 md:mb-8 col-span-2
   }
   &__input {
     input {
-      @apply border border-gray-300 rounded px-6 py-4 w-full
+      @apply border border-gray-300 rounded px-4 py-2 xl:px-6 xl:py-4 w-full transition-colors will-change-[border-color] hover:border-brown-400 focus:border-brown-400 active:border-brown-400
     }
     textarea {
-      @apply border border-gray-300 rounded px-6 py-4 w-full resize-none min-h-[160px] h-full
+      @apply block border border-gray-300 rounded px-4 py-2 xl:px-6 xl:py-4 w-full resize-none min-h-[42px] max-h-[42px] xl:max-h-full xl:min-h-[160px] h-full transition-colors will-change-[border-color] hover:border-brown-400 focus:border-brown-400 active:border-brown-400
     }
-    @apply mt-6
+    @apply mt-4 xl:mt-6
+  }
+  &__policy {
+    input {
+      &:checked + p {
+        &:before {
+          @apply bg-brown-400 border-brown-400
+        }
+        &:after {
+          @apply opacity-100
+        }
+      }
+      @apply absolute left-1
+    }
+    p {
+      a {
+        @apply md:ml-1 inline md:inline-block text-brown-400 will-change-[border-color] pt-[1px] border-b border-transparent transition-colors hover:border-brown-400
+      }
+      &:before {
+        @apply content-[''] absolute left-0 w-5 h-5 -top-[2px] md:top-auto rounded-[3px] border border-gray-200 bg-white will-change-[border-color,background-color] transition-colors
+      }
+      &:after {
+        @apply content-[url(/assets/images/check.svg)] absolute top-0 md:top-[2px] left-1 w-3 h-3 opacity-0 will-change-[opacity] transition-opacity z-10
+      }
+      @apply text-gray-400 text-xs pl-8 md:flex md:items-center leading-[16px]
+    }
+    &:hover {
+      p {
+        &:before {
+          @apply border-brown-400
+        }
+      }
+    }
+    @apply block mt-4 md:mt-5 xl:mt-[34px] md:inline-flex md:items-center cursor-pointer relative md:col-span-2
   }
   button {
-    @apply px-16 py-4 uppercase text-white text-[12px] will-change-[color,background-color,border-color] border border-transparent leading-[12px] font-semibold rounded bg-brown-400 inline-block mt-8 tracking-wide transition-colors hover:bg-white hover:text-brown-400 hover:border-brown-400
+    @apply order-2 md:-order-none w-full md:w-auto text-center md:px-16 py-4 col-span-2 tracking-widest uppercase text-white text-[12px] will-change-[color,background-color,border-color] border border-transparent leading-[12px] font-semibold rounded bg-brown-400 inline-block mt-5 xl:mt-8 transition-colors hover:bg-black hover:text-white hover:border-black
   }
-  @apply h-full fixed top-0 right-0 pt-[120px] pl-[113px] pr-[115px] pb-[150px] bg-white max-w-[674px] z-50 shadow-[10px_0_30px_rgba(0,0,0,0.15)]
+  &__cart {
+    @apply mt-8 xl:mt-14 col-span-2 order-1 md:-order-none
+  }
+  &__heading {
+    & h3 {
+      @apply text-black
+    }
+    & span {
+      @apply text-brown-400
+    }
+    @apply mb-[18px] text-[22px] leading-[22px] font-bold uppercase font-heading
+  }
+  &__cards {
+    @apply pb-5 md:pb-0 flex md:grid md:grid-cols-4 md:gap-x-[10px] md:gap-y-6 max-h-[150px] md:overflow-y-auto md:overflow-x-hidden overflow-x-auto overflow-y-hidden
+  }
+  &__card {
+    input {
+      @apply absolute invisible top-0 left-0
+    }
+    h4 {
+      @apply mt-[10px] text-gray-400 text-center text-[10px] leading-3
+    }
+    &:last-child {
+      @apply mr-0
+    }
+    @apply mr-4 md:mr-0 max-w-[91px] md:max-w-full min-w-[91px] md:min-w-full relative hidden
+  }
+  &__image {
+    img {
+      @apply max-w-[67px] max-h-[67px] w-full h-full object-cover mx-auto
+    }
+    @apply border rounded border-gray-300 px-3 py-[22px]
+  }
+  &__remove {
+    svg {
+      path {
+        @apply will-change-[stroke] transition-colors
+      }
+    }
+    &:hover {
+      svg {
+        path {
+          @apply stroke-brown-400
+        }
+      }
+    }
+    @apply absolute top-[6px] right-[6px] cursor-pointer
+  }
+  &.active {
+    @apply translate-x-0
+  }
+  @apply transition-transform duration-500 will-change-transform h-full fixed top-0 right-0 translate-x-full pt-10 md:py-14 px-4 md:px-14 xl:pt-[120px] xl:pl-[113px] xl:pr-[115px] xl:pb-[150px] bg-white max-w-full md:max-w-[550px] xl:max-w-[674px] z-[140] shadow-[10px_0_30px_rgba(0,0,0,0.15)]
+}
+
+@media(max-width:414px) and (max-height:736px) {
+  .popup {
+    &__form {
+      max-height: 638px;
+      overflow-y: auto;
+    }
+  }
+}
+
+@media(max-width:375px) and (max-height:667px) {
+  .popup {
+    &__form {
+      max-height: 590px;
+      overflow-y: auto;
+    }
+  }
 }

@@ -1,6 +1,6 @@
 .header {
   &__wrapper {
-    @apply flex items-center justify-between py-8 pl-14
+    @apply flex items-center justify-between py-8 pl-12
   }
   &__contacts {
     @apply flex
@@ -9,14 +9,14 @@
     &:last-child {
       @apply mr-0
     }
-    @apply text-xs text-gray-400 mr-12 inline-block duration-300 transition-colors hover:text-brown-400
+    @apply text-sm text-gray-400 mr-6 inline-block duration-300 transition-colors hover:text-brown-400
   }
   &__menu {
     .callback {
       &__counter {
-        @apply hidden absolute min-w-[31px] min-h-[31px] -top-[10px] -right-[11px] justify-center items-center bg-black text-white text-sm rounded-full
+        @apply hidden py-[5px] absolute min-w-[31px] min-h-[31px] -top-[10px] -right-[11px] text-center bg-black text-white text-sm rounded-full
       }
-      @apply relative text-xs tracking-wide uppercase ml-12 text-white bg-brown-400 rounded lg:py-3 lg:px-10 xl:py-4 xl:px-16 duration-300 transition-colors will-change-[background-color] hover:bg-black
+      @apply relative text-sm tracking-widest uppercase ml-12 text-white bg-brown-400 rounded lg:py-3 lg:px-10 xl:py-4 xl:px-16 duration-300 transition-colors will-change-[background-color] hover:bg-black
     }
     @apply flex items-center
   }
@@ -27,7 +27,99 @@
     &.active {
       @apply text-brown-400 border-b-brown-400
     }
-    @apply tracking-widest text-xs ml-[74px] inline-block uppercase border-b-4 border-transparent duration-300 font-bold transition-colors will-change-[color,border-color] hover:text-brown-400 hover:border-b-brown-400
+    @apply tracking-widest text-sm lg:ml-[52px] xl:ml-[74px] inline-block uppercase border-b-4 border-transparent duration-300 font-bold transition-colors will-change-[color,border-color] hover:text-brown-400 hover:border-b-brown-400
   }
-  @apply lg:px-[100px] xl:px-[150px] z-40 fixed top-0 w-full
+  @apply hidden lg:block lg:pl-[100px] lg:pr-[50px] xl:px-[150px] z-[105] fixed top-0 w-full
+}
+
+@media(min-width: 1440px) {
+  .header {
+    @apply pr-[100px]
+  }
+}
+
+.header-mob {
+  &__burger {
+    svg {
+      rect {
+        @apply transition-all will-change-[fill,opacity] duration-300
+      }
+    }
+    &.active {
+      svg {
+        rect {
+          &:first-child {
+            @apply rotate-45 translate-x-[4px]
+          }
+          &:nth-child(2) {
+            @apply -rotate-45 -translate-x-[4px] translate-y-[12px]
+          }
+          &:last-child {
+            @apply opacity-0
+          }
+          @apply fill-gray-400
+        }
+      }
+    }
+    @apply cursor-pointer z-[60]
+  }
+  &__logo {
+    svg {
+      @apply max-w-[56px] max-h-[36px] md:max-w-full md:max-h-full
+    }
+    @apply absolute left-1/2 -translate-x-1/2
+  }
+  &__contacts {
+    a {
+      &.mobile {
+        @apply block md:hidden
+      }
+      @apply hidden md:block text-white transition-colors will-change-[color] duration-300 hover:text-black
+    }
+    @apply flex flex-col items-end
+  }
+  .mobile-menu__bg {
+    @apply fixed top-0 left-0 w-full h-full bg-black z-40 hidden opacity-80
+  }
+  .mobile-menu {
+    &__list {
+      @apply flex flex-col items-start
+    }
+    &__link {
+      &:first-child {
+        @apply mt-0
+      }
+      &.active {
+        @apply text-brown-400 border-b-brown-400
+      }
+      @apply tracking-[0.12em] text-black font-bold uppercase mt-14 border-b-4 border-transparent duration-300 transition-colors will-change-[color,border-color] hover:text-brown-400 hover:border-b-brown-400
+    }
+    &__contact {
+      @apply text-sm font-semibold text-gray-400 mt-14 transition-colors will-change-[color] duration-300 hover:text-brown-400
+    }
+    &__social {
+      @apply flex justify-around mt-20 md:mt-[134px]
+    }
+    &.active {
+      @apply translate-x-0
+    }
+    @apply justify-between md:justify-start h-screen md:h-auto -translate-x-full duration-300 will-change-transform transition-transform fixed bg-white top-0 left-0 z-50 flex flex-col px-4 md:px-8 pt-[88px] md:pt-[110px] pb-10 w-full max-w-full md:max-w-[377px]
+  }
+  &.active {
+    @apply -translate-y-full
+  }
+  @apply transition-transform duration-300 will-change-transform lg:hidden bg-brown-400 fixed top-0 left-0 w-full flex z-[60] justify-between py-[15px] md:py-3 px-4 md:px-8 items-center
+}
+
+@media(max-width: 414px) and (max-height:736px) {
+  .header-mob {
+    .mobile-menu {
+      &__link {
+        @apply mt-8
+      }
+      &__contact {
+        @apply mt-8
+      }
+    }
+  }
 }

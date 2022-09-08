@@ -15,7 +15,7 @@
       }
       @apply bg-brown-400
     }
-    @apply cursor-pointer absolute w-[29px] h-[29px] rounded-full flex justify-center items-center right-16 top-6 bg-brown-300 transition-colors duration-300 will-change-[background-color] hover:bg-brown-400
+    @apply cursor-pointer absolute w-[29px] md:w-[23px] lg:w-[29px] h-[29px] md:h-[23px] lg:h-[29px] rounded-full flex justify-center items-center top-[14px] right-[57px] md:right-[74px] md:top-[29px] lg:top-6 bg-brown-300 transition-colors duration-300 will-change-[background-color] hover:bg-brown-400
   }
   &__plus {
     @apply block
@@ -24,19 +24,19 @@
     @apply hidden
   }
   &__close {
-    @apply top-[31px] right-6 absolute cursor-pointer
+    @apply top-5 right-4 md:top-8 md:right-8 absolute cursor-pointer
   }
   &__wrapper {
-    @apply flex justify-center lg:flex-col
+    @apply flex justify-center flex-col md:flex-row lg:flex-col pt-8 md:pt-16 lg:pt-0
   }
   &__inner {
     @apply lg:w-[290px] lg:h-[290px] xl:w-[354px] xl:h-[354px] 
   }
   &__image {
     img {
-      @apply w-full h-full object-cover select-none
+      @apply w-full h-full object-cover select-none max-w-[180px] max-h-[180px] md:max-w-full md:max-h-full
     }
-    @apply flex flex-col items-center justify-center
+    @apply flex flex-col items-center justify-between lg:justify-center
   }
   &__button {
     .add {
@@ -55,33 +55,34 @@
     }
   }
   .add {
-    @apply lg:mt-[36px] xl:mt-[32px]
+    @apply mt-7 md:mt-4 lg:mt-[36px] xl:mt-[32px]
   }
   .done {
     span {
       @apply ml-[6px] text-gray-400 font-medium
     }
-    @apply hidden items-center cursor-default pointer-events-none mt-[6px]
+    @apply hidden items-center cursor-default pointer-events-none md:mt-2
   }
   .delete {
     @apply hidden mt-[10px] text-brown-400 transition-colors will-change-[color] duration-300 hover:text-black cursor-pointer text-xs font-medium
   }
   &__content {
     h2 {
-      @apply lg:text-2xl xl:text-[32px] font-bold
+      @apply text-center md:text-left lg:text-2xl xl:text-[32px] font-bold
     }
     p {
       & + .card-popup__list {
         .card-popup__item {
-          @apply py-[11px]
+          @apply py-5 lg:py-[11px]
         }
+        @apply mt-4 md:mt-3
       }
-      @apply text-gray-400 text-xs mt-4
+      @apply text-center md:text-left text-gray-400 text-xs mt-4
     }
-    @apply pt-3 basis-8/12 flex flex-col justify-between lg:mt-[46px]
+    @apply mt-5 md:pt-3 basis-8/12 lg:mt-[46px] max-h-[400px] overflow-y-auto md:max-h-full md:overflow-visible
   }
   &__footer {
-    @apply flex items-center lg:mt-10 xl:mt-14
+    @apply flex items-center mt-[50px] lg:mt-10 xl:mt-14
   }
   &__weight {
     @apply text-gray-400 text-[21px] leading-[21px] basis-4/12 tracking-widest
@@ -102,10 +103,15 @@
     &:last-child {
       @apply border-b-0
     }
-    @apply border-b border-gray-300 lg:py-4 xl:py-[21px] flex items-center justify-between
+    @apply border-b border-gray-300 py-5 lg:py-4 xl:py-[21px] flex items-center justify-between
   }
   &__list {
-    @apply mt-[15px]
+    &.between {
+      .card-popup__desc {
+        @apply basis-auto text-right
+      }
+    }
+    @apply mt-10 lg:mt-[15px] md:max-h-[288px] md:overflow-y-auto lg:max-h-full lg:overflow-visible
   }
   &__title {
     @apply text-xs leading-[12px] basis-4/12
@@ -113,8 +119,9 @@
   &__desc {
     @apply text-[11px] leading-[14px] text-gray-400 basis-8/12 flex
   }
-  @apply border border-gray-300 transition-transform duration-[800ms] -left-full absolute bg-white pt-8 lg:pr-8 pb-7 pl-8 w-full z-10 top-0
+  @apply fixed top-0 md:top-[72px] lg:border lg:border-gray-300 transition-transform duration-[800ms] -left-full lg:absolute bg-white pt-8 pl-4 md:pl-0 pr-4 md:pr-8 pb-7 lg:pl-8 w-full z-[99] lg:top-0 min-h-screen md:min-h-[auto] md:h-[calc(100vh-72px)] lg:h-auto
 }
+
 @media(min-width: 1919px) {
   .card-popup {
     &__wrapper {

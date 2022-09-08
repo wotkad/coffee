@@ -1,22 +1,21 @@
 .catalog {
   &__title {
-    font-family: $heading;
-    @apply uppercase text-[44px] leading-[44px]
+    @apply uppercase text-[22px] leading-[22px] md:text-[44px] md:leading-[44px] font-heading
   }
   &__description {
     p {
-      @apply col-span-3 max-w-[729px]
+      @apply text-xs md:text-base col-span-3 max-w-[729px]
     }
     @apply mt-4 grid grid-cols-3 lg:mb-10 xl:mb-14
   }
   &__cards {
-    @apply relative mt-10 grid lg:grid-cols-2 gap-6 lg:pb-16 xl:pb-[88px]
+    @apply relative mt-6 md:mt-8 lg:mt-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-2 xl:grid-cols-3 gap-[15px] md:gap-6 pb-20 lg:pb-16 xl:pb-[88px]
   }
-}
-@media(min-width: 1919px) {
-  .catalog {
-    &__cards {
-      @apply grid-cols-3
+  &__section {
+    &:last-child {
+      .catalog__cards {
+        @apply pb-0
+      }
     }
   }
 }

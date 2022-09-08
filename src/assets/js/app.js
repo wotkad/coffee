@@ -7,12 +7,19 @@
 
 // #################################
 
+require("./getData/getData");
 require("./routing/routing");
+require("./addToCard/addToCard");
 require("./preloader/preloader");
 require("./linksChecker/checkInternalLinks/checkInternalLinks");
 require("./scroll/smoothScroll/smoothScroll");
-require("./scroll/scrollReveal/scrollReveal");
 require("./linksChecker/checkTarget/checkTarget");
 require("./cardPopup/cardPopup");
-require("./addToCard/addToCard");
 require("./scroll/scrollByAnchor/scrollByAnchor");
+require("./toggleAsidePopup/toggleAsidePopup");
+require("./toggleMobileMenu/toggleMobileMenu");
+require("./scroll/stickyHeader/stickyHeader");
+require("./heroSlider/heroSlider");
+
+
+

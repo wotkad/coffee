@@ -1,49 +1,54 @@
 .services {
-  &__back {
-    svg {
-      path {
-        @apply transition-colors duration-300 will-change-[fill]
-      }
-    }
-    span {
-      @apply text-gray-400 text-sm inline-block ml-3 duration-300 will-change-[color] transition-colors
-    }
-    &:hover {
-      svg {
-        path {
-          @apply fill-brown-400
-        }
-      }
-      span {
-        @apply text-brown-400
-      }
-    }
-    @apply flex items-center absolute z-10 top-[132px] left-14
-  }
   &__image {
     img {
-      @apply lg:max-w-[800px] xl:max-w-[1252px] xl:max-h-[792px]
+      @apply w-full
     }
-    @apply h-full flex items-center absolute left-0 top-0
+    @apply absolute top-28 left-0 md:static max-h-[226px] md:max-h-full order-2 lg:order-none max-w-[358px] md:max-w-[768px] lg:pt-24 lg:absolute lg:top-0 md:left-0 lg:max-w-[800px] xl:max-w-[80%] xl:max-h-[792px] 
   }
   &__content {
     h2 {
-      font-family: $heading;
-      @apply uppercase text-[63px] leading-[63px]
+      a {
+        svg {
+          path {
+            @apply duration-300 transition-colors will-change-[fill]
+          }
+        }
+        &:hover {
+          svg {
+            path {
+              @apply fill-brown-400
+            }
+          }
+        }
+        @apply inline-block mr-[23px] lg:ml-0 lg:hidden
+      }
+      span {
+        @apply absolute left-1/2 -translate-x-1/2 md:static md:translate-x-0
+      }
+      @apply order-1 lg:order-none flex items-center text-[26px] leading-[26px] lg:block md:text-[38px] md:leading-[43px] uppercase xl:text-[63px] xl:leading-[63px] lg:text-[42px] lg:leading-[42px] font-bold lg:font-normal lg:font-heading
     }
     ul {
       li {
         &:before {
-          @apply content-[''] absolute left-0 w-7 h-[3px] bg-brown-400 top-[11px]
+          @apply content-[''] absolute md:left-0 w-[35px] md:w-7 h-[3px] bg-brown-400 md:top-[11px] top-0 left-1/2 -translate-x-1/2 md:translate-x-0
         }
         &:first-child {
           @apply mt-0
         }
-        @apply mt-8 xl:text-lg relative pl-12 tracking-widest
+        @apply pt-2 mt-8 text-sm xl:text-lg relative md:pl-12 tracking-widest text-center md:text-left
       }
-      @apply mt-[57px]
+      @apply mt-[230px] md:mt-16 lg:mt-[57px]
     }
-    @apply lg:max-w-[580px] xl:max-w-[630px] pt-[71px] relative z-10 ml-auto
+    @apply lg:w-[580px] xl:w-[630px] lg:pt-20 xl:pt-[100px] relative z-10 ml-auto w-full
   }
-  @apply flex justify-between pt-[112px] relative h-full
+  .back {
+    @apply hidden lg:flex
+  }
+  @apply flex pt-[100px] md:pt-[112px] relative h-full flex-col lg:flex-row lg:mx-[50px] px-4 md:px-8 lg:px-0 pb-32 md:pb-20 lg:pb-0
+}
+
+@media(min-width: 1440px) {
+  .services {
+    @apply mx-0 xl:mx-[50px]
+  }
 }

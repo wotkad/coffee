@@ -1,15 +1,19 @@
 .navigation {
   &__container {
-    @apply fixed top-0 pt-[132px] pl-14
+    @apply lg:fixed lg:top-0 pt-[100px] md:pt-[132px] lg:pl-12 pl-4 md:pl-8 flex lg:block items-center -mb-9 md:-mb-14 lg:mb-0
   }
   &__back {
     svg {
       path {
         @apply transition-colors duration-300 will-change-[fill]
       }
+      &.mobile {
+        @apply block lg:hidden
+      }
+      @apply hidden lg:block
     }
     span {
-      @apply text-gray-400 text-sm inline-block ml-3 duration-300 will-change-[color] transition-colors
+      @apply hidden lg:inline-block text-gray-400 text-sm ml-3 duration-300 will-change-[color] transition-colors
     }
     &:hover {
       svg {
@@ -25,16 +29,15 @@
   }
   &__categories {
     h2 {
-      font-family: $heading;
-      @apply text-[22px] uppercase font-bold
+      @apply ml-[23px] text-[27px] leading-[27px] md:text-[38px] md:leading-[38px] lg:ml-0 lg:text-[22px] lg:leading-[22px] uppercase font-bold lg:font-heading
     }
     a {
       &:hover {
         @apply text-brown-400
       }
-      @apply tracking-widest text-gray-400 uppercase inline-block mt-8 mr-10 transition-colors duration-300 will-change-[color]
+      @apply hidden tracking-widest text-gray-400 uppercase lg:inline-block mt-8 mr-10 transition-colors duration-300 will-change-[color]
     }
-    @apply mt-16
+    @apply lg:mt-16
   }
   &__menu {
     a {
@@ -46,7 +49,7 @@
       }
       @apply tracking-widest text-lg font-bold uppercase inline-block lg:mt-12 xl:mt-[88px] border-b-4 border-transparent will-change-[border-color] hover:border-brown-400 duration-300
     }
-    @apply lg:mt-16 xl:mt-36 flex flex-col items-start
+    @apply hidden lg:flex lg:mt-16 xl:mt-36 flex-col items-start
   }
-  @apply shadow-[0_4px_20px_rgba(0,0,0,0.15)] max-w-[355px] bg-white w-full z-20 fixed left-0 lg:ml-[100px] xl:ml-[150px] top-0 h-full
+  @apply lg:shadow-[0_4px_20px_rgba(0,0,0,0.15)] lg:max-w-[355px] bg-white lg:w-full z-[103] lg:fixed lg:left-0 lg:ml-[100px] xl:ml-[150px] lg:top-0 lg:h-full
 }

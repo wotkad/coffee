@@ -1,28 +1,30 @@
 .hero {
   &__wrapper {
     h1 {
-      @apply col-start-1 col-end-[33] row-start-1 row-end-2
+      @apply md:col-start-1 md:col-end-[33] md:row-start-1 md:row-end-2
     }
-    @apply grid grid-cols-[repeat(32,minmax(0,1fr))] h-[calc(100vh-120px)] lg:py-[100px] xl:pt-[100px] xl:pb-[150px] gap-5
+    @apply overflow-x-hidden md:overflow-visible px-4 md:px-8 pt-[84px] md:pt-[126px] pb-[160px] md:pb-[134px] lg:px-0 lg:grid md:grid-cols-[repeat(32,minmax(0,1fr))] lg:h-[calc(100vh-120px)] py-[100px] xl:pt-[100px] xl:pb-[150px] md:gap-5
   }
   &__heading {
-    font-family: $heading;
     &-main {
-      @apply lg:text-[120px] lg:leading-[120px] xl:text-[146px] xl:leading-[146px]
+      @apply tracking-[0.01em] mb-2 md:mb-4 lg:mb-0 text-[48px] md:text-[96px] leading-[48px] md:leading-[96px] lg:text-[120px] lg:leading-[120px] xl:text-[146px] xl:leading-[146px] font-heading
     }
     &-secondary {
-      @apply lg:text-[53px] lg:leading-[53px] xl:text-[63px] xl:leading-[63px]
+      @apply text-xl md:text-[26px] leading-[20px] md:leading-[26px] lg:text-[53px] lg:leading-[53px] xl:text-[63px] xl:leading-[63px] pb-4 md:pb-3 tracking-[0.66em] lg:tracking-normal lg:font-heading
     }
-    @apply font-bold uppercase block z-20 relative
+    @apply font-bold uppercase block z-20 relative text-center lg:text-left
   }
   &__slogan {
     p {
-      @apply pl-4 border-l-4 border-brown-400 font-medium 
+      br {
+        @apply hidden
+      }
+      @apply text-gray-200 lg:text-black lg:pl-4 inline-block lg:border-l-4 lg:border-brown-400 md:font-medium border-t border-t-brown-400 px-8 pt-[10px] md:pt-4 lg:pt-0 lg:px-0 lg:border-t-0 lg:border-t-transparent
     }
-    @apply col-start-1 lg:col-end-8 xl:col-end-7 row-start-5 row-end-6 z-20 relative lg:pb-24 xl:pb-[138px]
+    @apply max-w-[252px] mx-auto md:mx-0 md:max-w-full text-sm lg:text-base text-center lg:text-left col-start-1 col-end-8 xl:col-end-7 row-start-5 row-end-6 z-20 relative md:mb-16 lg:pb-24 xl:pb-[138px]
   }
   &__links {
-    @apply grid grid-cols-3 gap-6 lg:col-start-8 xl:col-start-7 col-end-[33] lg:mt-10 xl:mt-14 row-start-1 row-end-6
+    @apply relative md:static h-[365px] md:h-auto md:col-start-8 xl:col-start-7 md:col-end-[33] mt-6 md:mt-10 xl:mt-14 md:row-start-1 md:row-end-6
   }
   &__link {
     img {
@@ -32,7 +34,7 @@
       &:before {
         @apply content-[''] absolute -left-20 bg-brown-400 h-full -z-[1] top-0 right-0 -translate-x-full transition-transform duration-700
       }
-      @apply p-2 uppercase z-10 text-white lg:text-2xl xl:text-[32px] lg:leading-[24px] will-change-[transform] xl:leading-[32px] font-semibold absolute bottom-8 left-8
+      @apply p-2 uppercase z-10 text-white text-2xl xl:text-[32px] leading-[24px] will-change-[transform] xl:leading-[32px] font-semibold absolute top-4 md:top-auto md:bottom-4 left-4 lg:bottom-8 lg:left-8
     }
     &:hover {
       img {
@@ -40,10 +42,60 @@
       }
       h3 {
         &:before {
-          @apply translate-x-8
+          @apply md:translate-x-6
         }
       }
     }
-    @apply overflow-hidden rounded lg:max-h-[500px] xl:max-h-[715px] relative
+  }
+  .swiper-wrapper {
+    @apply md:grid md:grid-cols-3 md:gap-6 
+  }
+  
+  .swiper-slide {
+    @apply overflow-hidden rounded md:max-h-[500px] xl:max-h-[715px] relative
+  }
+
+  .swiper-pagination-horizontal {
+    &.swiper-pagination-bullets {
+      .swiper-pagination-bullet {
+        &-active {
+          @apply text-brown-400
+        }
+        &:before {
+          @apply content-[''] absolute h-[1px] bg-gray-300 w-6 -right-[33px]
+        }
+        &:last-child {
+          &:before {
+            @apply hidden
+          }
+        }
+        @apply flex items-center relative w-auto h-auto bg-transparent rounded-none text-xl leading-[20px] text-gray-100 mx-[22px] opacity-100
+      }
+      @apply flex justify-center md:hidden -bottom-12
+    }
+  }
+}
+
+@media(min-width:768px) {
+  .hero {
+    .swiper-wrapper {
+      transform: translate3d(0,0,0) !important;
+    }
+    .swiper-slide {
+      width: auto !important;
+      margin-right: 0 !important;
+    }
+  }
+}
+
+@media (max-width:414px) and (max-height:736px) {
+  .hero__links {
+    @apply h-[300px]
+  }
+}
+
+@media (max-width:375px) and (max-height:667px) {
+  .hero__links {
+    @apply h-[250px]
   }
 }

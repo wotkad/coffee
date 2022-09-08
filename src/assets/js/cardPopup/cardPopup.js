@@ -1,11 +1,14 @@
 import $ from "jquery";
 import gsap from "gsap";
+import { disablePageScroll, enablePageScroll } from 'scroll-lock';
 
 export default function cardPopup() {
   let button = $('.card__more');
   let popup = $('.card-popup');
   let close = $('.card-popup__close');
   let cardItems = $('.catalog__cards');
+  let scrollableElement = document.querySelector('.card-popup__list');
+  let scrollableElement2 = document.querySelector('.card-popup__content');
   let timer;
   button.on('click', function() {
     $(this).parent().parent().parent().parent().children().children('.card-popup').removeClass('active');
@@ -14,30 +17,46 @@ export default function cardPopup() {
   close.on('click', function() {
     let that = $(this);
     clearTimeout(timer);
-    gsap.to(that.parent().parent().parent(), .3, {paddingTop: 0, onComplete: function() {
+    if ($(window).width() >= 1337) {
+      gsap.to(that.parent().parent().parent(), .3, {paddingTop: 0, onComplete: function() {
+        that.parent().removeClass('active');
+      }});
+    } else {
+      enablePageScroll();
       that.parent().removeClass('active');
-    }})
+    }
   });
   $(window).on('keydown', function(e) {
     if ( e.keyCode == 27 ) {
       clearTimeout(timer);
-      gsap.to(cardItems, .3, {paddingTop: 0, onComplete: function() {
+      if ($(window).width() >= 1337) {
+        gsap.to(cardItems, .3, {paddingTop: 0, onComplete: function() {
+          popup.removeClass('active');
+        }});
+      } else {
+        enablePageScroll();
         popup.removeClass('active');
-      }})
+      }
     }
   });
   for (let i = 0; i < button.length; i++) {
     $(button[i]).on('click', function() {
-      timer = setTimeout(function() {
-        gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
-      }, 800);
-      $('html, body').animate({
-        scrollTop: $(popup[i]).offset().top - 112
-      });
+      if ($(window).width() >= 1337) {
+        timer = setTimeout(function() {
+          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
+        }, 800);
+        $('html, body').animate({
+          scrollTop: $(popup[i]).offset().top - 112
+        });
+      } else {
+        disablePageScroll(scrollableElement, scrollableElement2);
+      }
     });
     $(window).on('resize', function() {
-      if (popup.hasClass('active')) {
-        gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
+      if ($(window).width() >= 1337) {
+        if (popup.hasClass('active')) {
+          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
+        }
       }
     });
   }

@@ -2,15 +2,9 @@
   @apply outline-none
 }
 
-html,
 body {
-  height: 100%;
-  text-rendering: optimizeSpeed;
-}
-
-body {
-  font-family: $font;
-  @apply text-black text-base;
+  font-family: $font, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  @apply text-black text-base min-h-full
 }
 
 .render {
@@ -19,13 +13,56 @@ body {
 
 main {
   &:before {
-    @apply content-[''] fixed lg:w-[calc(100%-200px)] xl:w-[calc(100%-300px)] bg-white pl-[355px] lg:ml-[100px] xl:ml-[150px] top-0 h-[112px] z-20
+    @apply hidden lg:block content-[''] fixed lg:w-[calc(100%-200px)] xl:w-[calc(100%-300px)] bg-white pl-[355px] lg:ml-[100px] xl:ml-[150px] top-0 h-[112px] z-[100]
   }
-  @apply relative lg:px-[100px] xl:px-[150px] w-full h-full
+  @apply relative lg:px-[50px] xl:px-[150px] w-full h-full
+}
+
+@media(min-width: 1440px) {
+  main {
+    @apply px-[100px]
+  }
+}
+
+main[data-barba-namespace="404"] + .hidden__button {
+  @apply hidden
+}
+
+main[data-barba-namespace="catalog"] .navigation {
+  @apply hidden lg:block
+}
+
+.hidden__button {
+  .callback__counter {
+    @apply hidden py-[5px] absolute min-w-[31px] min-h-[31px] -top-[10px] -right-[11px] text-center bg-black text-white text-sm rounded-full
+  }
+  @apply lg:hidden md:max-w-[418px] z-50 cursor-pointer tracking-widest uppercase py-[14px] text-center text-white bg-brown-400 rounded w-[calc(100%-32px)] md:w-full duration-300 transition-colors will-change-[background-color] hover:bg-black fixed bottom-10 left-4 right-4 md:right-auto md:left-1/2 md:-translate-x-1/2
 }
 
 .content {
-  @apply lg:ml-[455px] xl:ml-[605px] lg:w-[calc(100%-455px)] xl:w-[calc(100%-605px)] pt-[112px] overflow-hidden
+  @apply lg:ml-[455px] xl:ml-[505px] lg:w-[calc(100%-455px)] xl:w-[calc(100%-505px)] pt-[100px] md:pt-[128px] mx-4 md:mx-8 lg:mx-0 pb-[130px] xl:pb-[134px] lg:pt-[140px] xl:pt-[197px] overflow-hidden
+}
+
+.back {
+  svg {
+    path {
+      @apply transition-colors duration-300 will-change-[fill]
+    }
+  }
+  span {
+    @apply text-gray-400 text-sm inline-block ml-3 duration-300 will-change-[color] transition-colors
+  }
+  &:hover {
+    svg {
+      path {
+        @apply fill-brown-400
+      }
+    }
+    span {
+      @apply text-brown-400
+    }
+  }
+  @apply flex items-center absolute z-10 top-[132px] left-12
 }
 
 .barba {

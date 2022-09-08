@@ -2,10 +2,13 @@ import $ from "jquery";
 import barba from "@barba/core";
 import barbaPrefetch from "@barba/core";
 import gsap from "gsap";
-import isCurrentPage from "js/linksChecker/isCurrentPage/isCurrentPage";
-import cardPopup from "js/cardPopup/cardPopup";
-import addToCard from "js/addToCard/addToCard";
-import scrollByAnchor from "js/scroll/scrollByAnchor/scrollByAnchor";
+import isCurrentPage from "../linksChecker/isCurrentPage/isCurrentPage";
+import cardPopup from "../cardPopup/cardPopup";
+import addToCard from "../addToCard/addToCard";
+import scrollByAnchor from "../scroll/scrollByAnchor/scrollByAnchor";
+import toggleAsidePopup from "../toggleAsidePopup/toggleAsidePopup";
+import stickyHeader from "../scroll/stickyHeader/stickyHeader";
+import heroSlider from "../heroSlider/heroSlider";
 
 barba.use(barbaPrefetch);
 
@@ -45,6 +48,14 @@ barba.init({
         cardPopup();
         addToCard();
         scrollByAnchor();
+        toggleAsidePopup();
+        stickyHeader();
+        heroSlider();
+        if (data.next.namespace == '404' || $(window).width() >= 1024) {
+          $('.hidden__button').fadeOut();
+        } else {
+          $('.hidden__button').fadeIn();
+        }
         return gsap.from(data.next.container, .3, {
           opacity: 0
         });

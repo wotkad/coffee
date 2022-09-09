@@ -34,7 +34,7 @@
       @apply border border-gray-300 rounded px-4 py-2 xl:px-6 xl:py-4 w-full transition-colors will-change-[border-color] hover:border-brown-400 focus:border-brown-400 active:border-brown-400
     }
     textarea {
-      @apply block border border-gray-300 rounded px-4 py-2 xl:px-6 xl:py-4 w-full resize-none min-h-[42px] max-h-[42px] xl:max-h-[58px] xl:min-h-[58px] h-full transition-colors will-change-[border-color] hover:border-brown-400 focus:border-brown-400 active:border-brown-400
+      @apply block border border-gray-300 rounded px-4 py-2 xl:px-6 xl:py-4 w-full resize-none min-h-[160px] max-h-[160px] md:min-h-[42px] md:max-h-[42px] xl:max-h-[58px] xl:min-h-[58px] h-full transition-colors will-change-[border-color] hover:border-brown-400 focus:border-brown-400 active:border-brown-400
     }
     @apply mt-4 md:mt-0 xl:mt-6
   }

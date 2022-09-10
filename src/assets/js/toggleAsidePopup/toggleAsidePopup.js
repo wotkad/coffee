@@ -6,14 +6,12 @@ export default function toggleAsidePopup() {
   let popup = $('.popup');
   let close = $('.popup__close');
   let bg = $('.popup-bg');
-  let scrollableElement = document.querySelector('.popup__cards');
-  let scrollableElement2 = document.querySelector('.popup__form');
   bg.fadeOut();
   enablePageScroll();
   button.on('click', function() {
     popup.addClass('active');
     bg.fadeIn();
-    disablePageScroll(scrollableElement, scrollableElement2);
+    disablePageScroll();
   });
   close.on('click', function() {
     popup.removeClass('active');

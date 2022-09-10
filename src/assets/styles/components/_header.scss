@@ -98,12 +98,12 @@
       @apply text-sm font-semibold text-gray-400 mt-14 transition-colors will-change-[color] duration-300 hover:text-brown-400
     }
     &__social {
-      @apply flex justify-around mt-20 md:mt-[134px]
+      @apply flex justify-around mt-10 md:mt-[134px]
     }
     &.active {
       @apply translate-x-0
     }
-    @apply justify-between md:justify-start h-screen md:h-auto -translate-x-full duration-300 will-change-transform transition-transform fixed bg-white top-0 left-0 z-50 flex flex-col px-4 md:px-8 pt-[88px] md:pt-[110px] pb-10 w-full max-w-full md:max-w-[377px]
+    @apply justify-start h-screen md:h-auto -translate-x-full duration-300 will-change-transform transition-transform fixed bg-white top-0 left-0 z-50 flex flex-col px-4 md:px-8 pt-[88px] md:pt-[110px] pb-10 w-full max-w-full md:max-w-[377px]
   }
   &.active {
     @apply -translate-y-full
@@ -111,7 +111,7 @@
   @apply transition-transform duration-300 will-change-transform lg:hidden bg-brown-400 fixed top-0 left-0 w-full flex z-[60] justify-between py-[15px] md:py-3 px-4 md:px-8 items-center
 }
 
-@media(max-width: 414px) and (max-height:736px) {
+@media(max-width: 414px) and (max-height:812px) {
   .header-mob {
     .mobile-menu {
       &__link {
@@ -119,6 +119,19 @@
       }
       &__contact {
         @apply mt-8
+      }
+    }
+  }
+}
+
+@media(max-width: 375px) and (max-height:667px) {
+  .header-mob {
+    .mobile-menu {
+      &__link {
+        @apply mt-6
+      }
+      &__contact {
+        @apply mt-6
       }
     }
   }

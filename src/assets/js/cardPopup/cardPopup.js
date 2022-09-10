@@ -7,8 +7,6 @@ export default function cardPopup() {
   let popup = $('.card-popup');
   let close = $('.card-popup__close');
   let cardItems = $('.catalog__cards');
-  let scrollableElement = document.querySelector('.card-popup__list');
-  let scrollableElement2 = document.querySelector('.card-popup__content');
   let timer;
   button.on('click', function() {
     $(this).parent().parent().parent().parent().children().children('.card-popup').removeClass('active');
@@ -49,7 +47,7 @@ export default function cardPopup() {
           scrollTop: $(popup[i]).offset().top - 112
         });
       } else {
-        disablePageScroll(scrollableElement, scrollableElement2);
+        disablePageScroll();
       }
     });
     $(window).on('resize', function() {

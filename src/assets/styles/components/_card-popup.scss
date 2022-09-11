@@ -79,7 +79,10 @@
       }
       @apply text-center md:text-left text-gray-400 text-xs mt-4
     }
-    @apply pb-20 md:pb-0 mt-5 md:pt-3 basis-8/12 lg:mt-[46px] max-h-[308px] overflow-y-auto md:max-h-full md:overflow-visible
+    &.active {
+      @apply max-h-[calc(100vh-355px)]
+    }
+    @apply max-h-[calc(100vh-430px)] mt-5 md:pt-3 basis-8/12 lg:mt-[46px] overflow-y-auto md:max-h-full md:overflow-visible
   }
   &__footer {
     @apply flex items-center mt-[50px] lg:mt-10 xl:mt-14

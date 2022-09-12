@@ -27,7 +27,7 @@
     @apply top-5 right-4 md:top-8 md:right-8 absolute cursor-pointer
   }
   &__wrapper {
-    @apply flex justify-center flex-col md:flex-row lg:flex-col pt-8 md:pt-16 lg:pt-0
+    @apply flex justify-center flex-col md:flex-row lg:flex-col lg2:flex-row pt-8 md:pt-16 lg:pt-0
   }
   &__inner {
     @apply lg:w-[290px] lg:h-[290px] xl:w-[354px] xl:h-[354px] 
@@ -36,7 +36,7 @@
     img {
       @apply w-full h-full object-cover select-none max-w-[180px] max-h-[180px] md:max-w-full md:max-h-full
     }
-    @apply flex flex-col items-center justify-between lg:justify-center
+    @apply flex flex-col items-center justify-between lg:justify-center lg2:justify-between
   }
   &__button {
     .add {
@@ -82,7 +82,7 @@
     &.active {
       @apply max-h-[calc(100vh-355px)]
     }
-    @apply max-h-[calc(100vh-430px)] mt-5 md:pt-3 basis-8/12 lg:mt-[46px] overflow-y-auto md:max-h-full md:overflow-visible
+    @apply max-h-[calc(100vh-430px)] mt-5 md:pt-3 basis-8/12 lg:mt-[46px] lg2:mt-0 overflow-y-auto md:max-h-full md:overflow-visible
   }
   &__footer {
     @apply flex items-center mt-[50px] lg:mt-10 xl:mt-14

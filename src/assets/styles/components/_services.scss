@@ -3,7 +3,7 @@
     img {
       @apply w-full
     }
-    @apply absolute top-28 left-0 md:static max-h-[226px] md:max-h-full order-2 lg:order-none max-w-[358px] md:max-w-[768px] lg:pt-24 lg:absolute lg:top-0 md:left-0 lg:max-w-[800px] xl:max-w-[80%] xl:max-h-[792px] 
+    @apply absolute top-28 md:static max-h-[226px] md:max-h-full order-2 lg:order-none max-w-[358px] md:max-w-[768px] lg:pt-24 lg:absolute lg:top-0 md:left-0 lg:max-w-[800px] xl:max-w-[80%] xl:max-h-[792px] 
   }
   &__content {
     h2 {
@@ -44,7 +44,7 @@
   .back {
     @apply hidden lg:flex
   }
-  @apply flex pt-[100px] md:pt-[112px] relative h-full flex-col lg:flex-row lg:mx-[50px] px-4 md:px-8 lg:px-0 pb-32 md:pb-20 lg:pb-0
+  @apply flex items-center pt-[100px] md:pt-[112px] relative h-full flex-col lg:flex-row lg:mx-[50px] px-4 md:px-8 lg:px-0 pb-32 md:pb-20 lg:pb-0
 }
 
 @media(min-width: 1440px) {

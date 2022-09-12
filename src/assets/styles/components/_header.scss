@@ -14,7 +14,7 @@
   &__menu {
     .callback {
       &__counter {
-        @apply hidden py-[5px] absolute min-w-[31px] min-h-[31px] -top-[10px] -right-[11px] text-center bg-black text-white text-sm rounded-full
+        @apply hidden justify-center py-[5px] absolute min-w-[31px] min-h-[31px] -top-[10px] -right-[11px] text-center bg-black text-white text-sm rounded-full
       }
       @apply relative text-sm tracking-widest uppercase ml-12 text-white bg-brown-400 rounded lg:py-3 lg:px-10 xl:py-4 xl:px-16 duration-300 transition-colors will-change-[background-color] hover:bg-black
     }
@@ -79,7 +79,7 @@
     @apply flex flex-col items-end
   }
   .mobile-menu__bg {
-    @apply fixed top-0 left-0 w-full h-full bg-black z-40 hidden opacity-80
+    @apply fixed top-0 left-0 w-full h-screen bg-black z-40 hidden opacity-80
   }
   .mobile-menu {
     &__list {

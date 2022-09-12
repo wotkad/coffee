@@ -1,6 +1,6 @@
 .popup {
   &-bg {
-    @apply fixed top-0 left-0 w-full h-full bg-black z-[130] hidden opacity-80
+    @apply cursor-pointer fixed top-0 left-0 w-full h-full bg-black z-[130] hidden opacity-80
   }
   &__close {
     svg {
@@ -128,7 +128,7 @@
   &.active {
     @apply translate-x-0
   }
-  @apply transition-transform duration-500 will-change-transform h-full fixed top-0 right-0 translate-x-full pt-5 px-4 md:pt-8 md:px-10 pb-0 xl:p-[100px] bg-white max-w-full md:max-w-[550px] xl:max-w-[674px] z-[140] shadow-[10px_0_30px_rgba(0,0,0,0.15)]
+  @apply transition-transform duration-500 will-change-transform h-full fixed top-0 right-0 translate-x-full pt-5 px-4 md:pt-8 md:px-10 pb-0 xl:p-[100px] bg-white max-w-full md:max-w-[550px] xl:max-w-[674px] z-[300] shadow-[10px_0_30px_rgba(0,0,0,0.15)]
 }
 
 @media(max-width:414px) {

@@ -33,7 +33,7 @@ export default function addToCard() {
         counter.text(localStorage.counter);
         popupCounter.text(localStorage.counter);
       } else {
-        counter.show();
+        counter.css('display', 'flex');
         popupCart.show();
         counter.text(localStorage.counter);
         popupCounter.text(localStorage.counter);
@@ -133,7 +133,7 @@ export default function addToCard() {
           } else {
             popupCounter.text(selectedItems.length);
             counter.text(selectedItems.length);
-            counter.show();
+            counter.css('display', 'flex');
             popupCart.show();
           }
           localStorage.counter = selectedItems.length;

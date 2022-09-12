@@ -18,6 +18,11 @@ export default function toggleAsidePopup() {
     bg.fadeOut();
     enablePageScroll();
   });
+  bg.on('click', function() {
+    popup.removeClass('active');
+    bg.fadeOut();
+    enablePageScroll();
+  });
   $(window).on('keydown', function(e) {
     if ( e.keyCode == 27 ) {
       popup.removeClass('active');

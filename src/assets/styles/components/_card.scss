@@ -30,7 +30,7 @@
     @apply lg:border-brown-400 leading-[14px] lg:leading-[28px] tracking-widest lg:border text-center lg:rounded p-0 mt-5 lg:mt-10 lg:py-2 lg:px-8 uppercase text-brown-400 transition-colors will-change-[color,background-color] duration-300 lg:hover:text-white hover:text-black lg:hover:bg-brown-400 text-sm lg:text-base
   }
   &__content {
-    @apply flex-1 flex flex-col justify-between lg:h-[calc(100%-200px)] xl:h-[calc(100%-290px)]
+    @apply flex-1 flex flex-col items-center justify-between lg:h-[calc(100%-200px)] xl:h-[calc(100%-290px)]
   }
   &__text {
     @apply lg:mt-5 text-gray-400 text-center lg:text-[21px] tracking-widest lg:mb-3 text-sm mt-5

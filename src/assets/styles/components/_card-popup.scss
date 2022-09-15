@@ -68,7 +68,7 @@
   }
   &__content {
     h2 {
-      @apply text-center md:text-left lg:text-2xl xl:text-[32px] font-bold
+      @apply text-center md:text-left lg:text-center lg2:text-left text-lg md:text-2xl xl:text-[32px] font-bold
     }
     p {
       & + .card-popup__list {
@@ -77,7 +77,7 @@
         }
         @apply mt-4 md:mt-3
       }
-      @apply text-center md:text-left text-gray-400 text-xs mt-4
+      @apply text-center md:text-left lg:text-center lg2:text-left text-gray-400 text-xs mt-4
     }
     &.active {
       @apply max-h-[calc(100vh-355px)]

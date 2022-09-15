@@ -72,9 +72,6 @@
     }
     p {
       & + .card-popup__list {
-        .card-popup__item {
-          @apply py-5 lg:py-[11px]
-        }
         @apply mt-4 md:mt-3
       }
       @apply text-center md:text-left lg:text-center lg2:text-left text-gray-400 text-xs mt-4
@@ -106,10 +103,13 @@
     &:last-child {
       @apply border-b-0
     }
-    @apply border-b border-gray-300 py-5 lg:py-4 xl:py-[21px] flex items-center justify-between
+    @apply border-b border-gray-300 py-5 xl:py-[21px] flex items-center justify-between
   }
   &__list {
     &.between {
+      .card-popup__item {
+        @apply py-[10px]
+      }
       .card-popup__desc {
         @apply basis-auto text-right
       }

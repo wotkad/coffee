@@ -11,7 +11,6 @@ require("./getData/getData");
 require("./routing/routing");
 require("./addToCard/addToCard");
 require("./preloader/preloader");
-require("./linksChecker/checkInternalLinks/checkInternalLinks");
 require("./scroll/smoothScroll/smoothScroll");
 require("./linksChecker/checkTarget/checkTarget");
 require("./cardPopup/cardPopup");

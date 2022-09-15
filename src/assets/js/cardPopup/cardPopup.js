@@ -28,9 +28,13 @@ export default function cardPopup() {
     if ( e.keyCode == 27 ) {
       clearTimeout(timer);
       if ($(window).width() >= 1337) {
-        gsap.to(cardItems, .3, {paddingTop: 0, onComplete: function() {
+        if (document.querySelector('.catalog__cards')) {
+          gsap.to('.catalog__cards', .3, {paddingTop: 0, onComplete: function() {
+            popup.removeClass('active');
+          }});
+        } else {
           popup.removeClass('active');
-        }});
+        }
       } else {
         enablePageScroll();
         popup.removeClass('active');

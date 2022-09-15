@@ -23,12 +23,6 @@ barba.hooks.beforeLeave((data) => {
 barba.init({
   preventRunning: true,
   prevent: ({ el }) => el.classList && el.classList.contains('prevent'),
-  requestError: (trigger, action, url, response) => {
-    if (action === "click" && response.status && response.status === 404) {
-      barba.go("/404");
-    }
-    return false;
-  },
   transitions: [
     {
       name: "opacity-transition",

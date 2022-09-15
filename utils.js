@@ -27,7 +27,7 @@ exports.pages = function (mode, folder = "") {
         ? `${viewName}/index.html`
         : `${folder}/${viewName}/index.html`;
     const options = {
-      minify: !isDevMode(mode),
+      minify: false,
       filename: fileName,
       template: `views/${rootPagesFolderName}/${folder}/${view}`,
       inject: true,

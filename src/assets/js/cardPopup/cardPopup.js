@@ -45,7 +45,7 @@ export default function cardPopup() {
     $(button[i]).on('click', function() {
       if ($(window).width() >= 1337) {
         timer = setTimeout(function() {
-          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
+          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: $(button[i]).parent().parent().parent().children('.card-popup').height() + 84 + 'px'});
         }, 800);
         $('html, body').animate({
           scrollTop: $(popup[i]).offset().top - 112
@@ -57,7 +57,7 @@ export default function cardPopup() {
     $(window).on('resize', function() {
       if ($(window).width() >= 1337) {
         if (popup.hasClass('active')) {
-          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: popup.height() + 84 + 'px'});
+          gsap.to($(button[i]).parent().parent().parent().parent(), .3, {paddingTop: $(button[i]).parent().parent().parent().children('.card-popup').height() + 84 + 'px'});
         }
       }
     });

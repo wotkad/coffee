@@ -8,14 +8,20 @@ export default function stickyHeader() {
     let currentScrollPos = window.pageYOffset;
     if (prevScrollpos > currentScrollPos) {
       header.removeClass('active');
-      contentHeight.removeClass('active');
+      if ($(window).width() <= 414) {
+        contentHeight.removeClass('active');
+      }
     } else {
       header.addClass('active');
-      contentHeight.addClass('active');
+      if ($(window).width() <= 414) {
+        contentHeight.addClass('active');
+      }
     }
     if (window.pageYOffset <= 0) {
       header.removeClass('active');
-      contentHeight.removeClass('active');
+      if ($(window).width() <= 414) {
+        contentHeight.removeClass('active');
+      }
     }
     prevScrollpos = currentScrollPos;
   }

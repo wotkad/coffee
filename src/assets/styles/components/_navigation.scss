@@ -29,13 +29,13 @@
   }
   &__categories {
     h2 {
-      @apply ml-[23px] text-[27px] leading-[27px] md:text-[38px] md:leading-[38px] lg:ml-0 lg:text-[22px] lg:leading-[22px] uppercase font-bold lg:font-heading
+      @apply text-black ml-[23px] text-[27px] leading-[27px] md:text-[38px] md:leading-[38px] lg:ml-0 lg:text-[22px] lg:leading-[22px] uppercase font-bold lg:font-heading
     }
     a {
       &:hover {
         @apply text-brown-400
       }
-      @apply hidden tracking-widest text-gray-400 uppercase lg:inline-block mt-8 mr-10 transition-colors duration-300 will-change-[color]
+      @apply hidden lg:inline-block tracking-widest text-gray-400 uppercase mt-8 mr-10 transition-colors duration-300 will-change-[color]
     }
     @apply lg:mt-16
   }

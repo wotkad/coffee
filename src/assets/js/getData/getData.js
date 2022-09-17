@@ -15,7 +15,7 @@ export default function getData() {
       let item = selectedItems[i];
       popupCards.append(
         `
-        <div class="popup__card" data-card="${item.id}"
+        <div class="popup__card" data-card="${item.id}">
           <input type="text" name="${item.id}" value="${item.title}" >
           <div class="popup__remove" data-button="${item.id}">
             <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1L1.3258 8M7.6742 8L1 1" stroke="#A6A6A6" stroke-linecap="round"/></svg>

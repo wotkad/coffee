@@ -67,7 +67,7 @@ export default function addToCard() {
           // Создаем карточеки в форме заявки
           popupCards.append(
             `
-            <div class="popup__card" data-card="${mainCallButton.attr('data-button')}"
+            <div class="popup__card" data-card="${mainCallButton.attr('data-button')}">
               <input type="text" name="${mainCallButton.attr('data-button')}" value="${mainCallButton.parent().find('h3').text()}" >
               <div class="popup__remove call-popup active" data-button="${mainCallButton.attr('data-button')}">
                 <svg width="9" height="9" viewBox="0 0 9 9" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1L1.3258 8M7.6742 8L1 1" stroke="#A6A6A6" stroke-linecap="round"/></svg>

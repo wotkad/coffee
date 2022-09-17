@@ -19,6 +19,5 @@ require("./toggleAsidePopup/toggleAsidePopup");
 require("./toggleMobileMenu/toggleMobileMenu");
 require("./scroll/stickyHeader/stickyHeader");
 require("./heroSlider/heroSlider");
-
-
-
+require("./sendForm/sendForm");
+require("./sendMail/sendMail");

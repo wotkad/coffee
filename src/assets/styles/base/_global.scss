@@ -69,6 +69,13 @@ button {
   @apply flex items-center absolute z-10 top-[132px] left-12
 }
 
+.success {
+  &.active {
+    @apply translate-x-0
+  }
+  @apply translate-x-[calc(100%+40px)] transition-transform fixed bottom-5 right-5 rounded shadow-md bg-brown-400 py-3 px-8 z-[1000] text-white text-sm uppercase tracking-widest
+}
+
 .barba {
   @apply w-full h-full
 }

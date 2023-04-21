@@ -1,1 +1,1 @@
-# Corporate website for "Samba" company
+# Сайт для компании "Samba Professional".
